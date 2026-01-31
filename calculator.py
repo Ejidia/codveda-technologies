@@ -33,3 +33,33 @@ def get_valid_operation():
         if operation in operations:
             return operation
         print("Error: Please enter a valid operation (+, -, *, /).")
+
+def calculate():
+    """Main calculator function"""
+    print("Simple Calculator")
+    print("-----------------")
+    
+    # Get inputs
+    num1 = get_valid_number("Enter first number: ")
+    num2 = get_valid_number("Enter second number: ")
+    operation = get_valid_operation()
+    
+    # Perform calculation
+    try:
+        if operation == '+':
+            result = add(num1, num2)
+            print(f"\nResult: {num1} + {num2} = {result}")
+        elif operation == '-':
+            result = subtract(num1, num2)
+            print(f"\nResult: {num1} - {num2} = {result}")
+        elif operation == '*':
+            result = multiply(num1, num2)
+            print(f"\nResult: {num1} * {num2} = {result}")
+        elif operation == '/':
+            result = divide(num1, num2)
+            print(f"\nResult: {num1} / {num2} = {result}")
+    except ValueError as e:
+        print(f"\n{e}")
+
+if __name__ == "__main__":
+    calculate()
