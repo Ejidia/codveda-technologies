@@ -16,3 +16,11 @@ def divide(x, y):
         raise ValueError("Error: Division by zero is not allowed")
     return x / y
 
+def get_valid_number(prompt):
+    """Get a valid number from user input"""
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Error: Please enter a valid number.")
