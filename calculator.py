@@ -24,3 +24,12 @@ def get_valid_number(prompt):
             return number
         except ValueError:
             print("Error: Please enter a valid number.")
+
+def get_valid_operation():
+    """Get a valid operation from user input"""
+    operations = ['+', '-', '*', '/']
+    while True:
+        operation = input("Enter operation (+, -, *, /): ").strip()
+        if operation in operations:
+            return operation
+        print("Error: Please enter a valid operation (+, -, *, /).")
